@@ -1,0 +1,55 @@
+body {
+  color: white;
+  background-color: gray;
+}
+
+.App {
+  text-align: center;
+  .tasksContainer {
+    text-align: left;
+    position: relative;
+    margin-bottom: 20px;
+    padding: 10px 140px 10px 15px;
+    background-color: #555;
+
+    .taskNumber {
+      color: #999;
+      border: solid 1px #999;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      margin-right: 15px;
+    }
+
+    .iconContent {
+      right: 15px;
+      top: 25%;
+      position: absolute;
+      width: auto;
+      display: inline-block;
+
+      color: greenyellow;
+      span {
+        margin-left: 5px;
+      }
+    }
+    .done .taskText {
+      text-decoration: line-through;
+      opacity: 0.3;
+    }
+  }
+  .tasksContainer div {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.container {
+  margin: 20px auto;
+  width: 300px;
+}
