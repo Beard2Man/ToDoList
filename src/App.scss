@@ -38,6 +38,9 @@ body {
         margin-left: 5px;
       }
     }
+    .taskText {
+      flex: 1;
+    }
     .done .taskText {
       text-decoration: line-through;
       opacity: 0.3;
