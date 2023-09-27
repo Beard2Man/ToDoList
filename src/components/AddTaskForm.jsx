@@ -1,4 +1,12 @@
-const AddTaskForm = ({ newTask, setNewTask, addTask }) => {
+import { useEffect } from "react";
+
+const AddTaskForm = ({ newTask, setNewTask, addTask, toDo }) => {
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      addTask();
+    }
+  };
+
   return (
     <>
       <div>
@@ -7,6 +15,7 @@ const AddTaskForm = ({ newTask, setNewTask, addTask }) => {
             type="text"
             className=""
             value={newTask}
+            onKeyDown={handleKeyDown}
             onChange={(e) => setNewTask(e.target.value)}
           />
         </div>

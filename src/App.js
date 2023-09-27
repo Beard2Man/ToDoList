@@ -1,15 +1,8 @@
-import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCircleCheck,
-  faTrashCan,
-  faPen,
-} from "@fortawesome/free-solid-svg-icons";
+import { useState, useEffect } from "react";
 
 import AddTaskForm from "./components/AddTaskForm.jsx";
 import UpdateForm from "./components/UpdateForm.jsx";
 import ToDo from "./components/ToDo.jsx";
-// import "../src/App.scss";
 
 import "./App.scss";
 
@@ -19,6 +12,7 @@ function App() {
   const [newTask, setNewTask] = useState("");
   const [updateData, setUpdateData] = useState("");
 
+  console.log(newTask);
   const addTask = () => {
     if (newTask) {
       let num = toDo.length + 1;
