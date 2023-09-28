@@ -21,6 +21,10 @@ const ToDo = ({ toDo, markDone, setUpdateData, deleteTask }) => {
                     <span className="taskNumber">{index + 1}</span>
                     <span className="taskText">{task.title}</span>
                   </div>
+                  <div>
+                    <span className="taskText">{task.description}</span>
+                  </div>
+
                   <div className="iconContent">
                     <span
                       title="Completed / Not Completed"

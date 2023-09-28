@@ -11,7 +11,9 @@ function App() {
 
   const [newTask, setNewTask] = useState("");
   const [updateData, setUpdateData] = useState("");
-
+  const [desc, setDesc] = useState("");
+  // console.log("wartosc poczatek", desc);
+  // console.log("wartosc poczatek", newTask);
   useEffect(() => {
     localStorage.setItem("toDo", JSON.stringify(toDo));
   }, [toDo]);
@@ -24,13 +26,22 @@ function App() {
   });
 
   const addTask = () => {
-    if (newTask) {
+    if (newTask && desc) {
       let num = toDo.length + 1;
-      let newEntry = { id: num, title: newTask, status: false };
+      let newEntry = {
+        id: num,
+        title: newTask,
+        description: desc,
+        status: false,
+      };
+
       setToDo([...toDo, newEntry]);
       setNewTask("");
+      setDesc("");
     }
   };
+  // console.log("wartosc po", desc);
+  // console.log("wartosc po", newTask);
   const deleteTask = (id) => {
     let newTask = toDo.filter((task) => task.id !== id);
     setToDo(newTask);
@@ -51,6 +62,7 @@ function App() {
     let newEntry = {
       id: updateData.id,
       title: e.target.value,
+      description: e.target.value,
       status: updateData.status ? true : false,
     };
     setUpdateData(newEntry);
@@ -76,6 +88,8 @@ function App() {
           newTask={newTask}
           setNewTask={setNewTask}
           addTask={addTask}
+          desc={desc}
+          setDesc={setDesc}
         />
       )}
 

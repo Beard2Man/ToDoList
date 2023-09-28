@@ -28,7 +28,7 @@ body {
 
     .iconContent {
       right: 15px;
-      top: 25%;
+      top: 5%;
       position: absolute;
       width: auto;
       display: inline-block;
@@ -53,6 +53,7 @@ body {
 }
 
 .container {
+  height: 200px;
   margin: 20px auto;
-  width: 300px;
+  width: 200px;
 }
