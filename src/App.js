@@ -12,7 +12,17 @@ function App() {
   const [newTask, setNewTask] = useState("");
   const [updateData, setUpdateData] = useState("");
 
-  console.log(newTask);
+  useEffect(() => {
+    localStorage.setItem("toDo", JSON.stringify(toDo));
+  }, [toDo]);
+
+  useState(() => {
+    const storeToDo = JSON.parse(localStorage.getItem("toDo"));
+    if (storeToDo) {
+      setToDo(storeToDo);
+    }
+  });
+
   const addTask = () => {
     if (newTask) {
       let num = toDo.length + 1;
