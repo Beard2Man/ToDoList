@@ -1,0 +1,48 @@
+.App {
+  .addTaskContainer {
+    margin-top: 100px;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 500px;
+    height: 500px;
+    background-color: rgba(6, 6, 65, 0.824);
+    .taskForm {
+      align-items: center;
+
+      input {
+        background-color: rgba(0, 94, 255, 0.765);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        height: 25px;
+        margin-top: 5px;
+        width: 250px;
+      }
+      textarea {
+        color: white;
+        background-color: rgba(0, 94, 255, 0.765);
+        border: none;
+        border-radius: 5px;
+        margin-top: 5px;
+        height: 100px;
+        width: 250px;
+      }
+    }
+    .btnAdd {
+      margin-top: auto;
+    }
+  }
+}
+
+.taskForm {
+  display: flex;
+  flex-direction: column;
+  .inputTask {
+  }
+  .textareaTask {
+  }
+}

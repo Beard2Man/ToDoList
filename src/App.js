@@ -4,6 +4,9 @@ import AddTaskForm from "./components/AddTaskForm.jsx";
 import UpdateForm from "./components/UpdateForm.jsx";
 import ToDo from "./components/ToDo.jsx";
 
+/* IMPORT CSS */
+import "./styleComponents/addTask.scss";
+
 import "./App.scss";
 
 function App() {
@@ -74,8 +77,13 @@ function App() {
     setUpdateData("");
   };
 
+  /*Show and hide*/
+  const [isShown, setIsShown] = useState(false);
+  const handleClick = (e) => {
+    setIsShown((current) => !current);
+  };
   return (
-    <div className="App">
+    <div className="App container">
       {updateData && updateData ? (
         <UpdateForm
           updateData={updateData}
@@ -84,13 +92,22 @@ function App() {
           updateTask={updateTask}
         />
       ) : (
-        <AddTaskForm
-          newTask={newTask}
-          setNewTask={setNewTask}
-          addTask={addTask}
-          desc={desc}
-          setDesc={setDesc}
-        />
+        <div>
+          <button className="btnAddTask" onClick={handleClick}>
+            New Task
+          </button>
+          {isShown && (
+            <div>
+              <AddTaskForm
+                newTask={newTask}
+                setNewTask={setNewTask}
+                addTask={addTask}
+                desc={desc}
+                setDesc={setDesc}
+              />
+            </div>
+          )}
+        </div>
       )}
 
       {toDo && toDo.length ? "" : "No Tasks..."}

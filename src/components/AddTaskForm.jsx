@@ -1,3 +1,5 @@
+import "../styleComponents/addTask.scss";
+
 const AddTaskForm = ({ newTask, setNewTask, addTask, desc, setDesc }) => {
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
@@ -7,12 +9,13 @@ const AddTaskForm = ({ newTask, setNewTask, addTask, desc, setDesc }) => {
 
   return (
     <>
-      <div>
+      <div className="addTaskContainer">
         <div>
-          <form action="" onSubmit={addTask}>
+          <form className="taskForm" action="" onSubmit={addTask}>
             <input
+              placeholder="Task title..."
               type="text"
-              className=""
+              className="inputTask"
               value={newTask}
               onKeyDown={handleKeyDown}
               onChange={(e) => setNewTask(e.target.value)}
@@ -20,14 +23,16 @@ const AddTaskForm = ({ newTask, setNewTask, addTask, desc, setDesc }) => {
 
             <textarea
               type="text"
-              className=""
+              className="textareaTask"
               value={desc}
+              placeholder="Task description..."
               // onKeyDown={handleKeyDown}
               onChange={(e) => setDesc(e.target.value)}
             />
           </form>
         </div>
-        <div>
+
+        <div className="btnAdd">
           <button onClick={addTask}>Add Task</button>
         </div>
       </div>

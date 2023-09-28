@@ -4,8 +4,22 @@ body {
 }
 
 .App {
+  .btnAddTask {
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    cursor: pointer;
+    color: white;
+    border-radius: 12px;
+    border: none;
+    background-color: rgba(0, 94, 255, 0.906);
+    height: 40px;
+    width: 120px;
+  }
   text-align: center;
   .tasksContainer {
+    top: 50%;
+    position: absolute;
     text-align: left;
     position: relative;
     margin-bottom: 20px;
@@ -54,6 +68,7 @@ body {
 
 .container {
   height: 200px;
-  margin: 20px auto;
+  margin: auto;
+
   width: 200px;
 }
