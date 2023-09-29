@@ -3,6 +3,8 @@ import "../styleComponents/navigationWeather.scss";
 import axios from "axios";
 import Calendar from "react-calendar";
 
+import "react-calendar/dist/Calendar.css";
+
 function WeatherCalendar() {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
@@ -65,7 +67,7 @@ function WeatherCalendar() {
       <div className="calendarSection">
         <h1>Test calendar</h1>
         <div className="calendar-container">
-          <Calendar />
+          <Calendar value={calendar} setCalendar={true} />
         </div>
       </div>
     </div>
