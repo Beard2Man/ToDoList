@@ -5,18 +5,19 @@ body {
 
 .App {
   display: flex;
+
   .container {
-    margin-top: 200px;
-    width: 100%;
-    align-items: center;
-    flex-direction: column;
-    display: flex;
+    // margin-top: 200px;
+    width: 70%;
+    // align-items: center;
+    // flex-direction: column;
+    // display: flex;
   }
 
   .btnAddTask {
     top: 30px;
-    right: 220px;
-    position: absolute;
+    right: 300px;
+    position: fixed;
     cursor: pointer;
     color: white;
     border-radius: 12px;

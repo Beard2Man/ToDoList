@@ -1,0 +1,36 @@
+.testNavig {
+  width: 300px;
+  height: 1000px;
+  background-color: rgb(46, 44, 44);
+}
+.testWeather {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  // height: 1000px;
+  background-color: rgb(46, 44, 44);
+  .weatherSection {
+    position: fixed;
+    border-radius: 10px;
+    border: none;
+    .bottomSection {
+      // display: ;
+
+      display: flex;
+      justify-content: space-around;
+      // display: none;
+    }
+    max-width: 200px;
+    color: black;
+    background-color: rgb(255, 174, 0);
+    input {
+      border-radius: 5px;
+      margin-top: 10px;
+      height: 25px;
+      width: 65%;
+      border: none;
+    }
+  }
+}

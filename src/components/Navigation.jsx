@@ -1,4 +1,4 @@
-import "../styleComponents/navigation.scss";
+import "../styleComponents/navigationWeather.scss";
 
 function Navigation() {
   return (

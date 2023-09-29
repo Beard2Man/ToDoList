@@ -16,8 +16,7 @@ function App() {
   const [newTask, setNewTask] = useState("");
   const [updateData, setUpdateData] = useState("");
   const [desc, setDesc] = useState("");
-  // console.log("wartosc poczatek", desc);
-  // console.log("wartosc poczatek", newTask);
+
   useEffect(() => {
     localStorage.setItem("toDo", JSON.stringify(toDo));
   }, [toDo]);
@@ -84,8 +83,9 @@ function App() {
     setIsShown((current) => !current);
   };
   return (
-    <div className="App">
+    <div className="App container">
       <Navigation />
+
       {updateData && updateData ? (
         <UpdateForm
           updateData={updateData}
@@ -112,7 +112,6 @@ function App() {
         </div>
       )}
 
-      {toDo && toDo.length ? "" : "No Tasks..."}
       <ToDo
         toDo={toDo}
         markDone={markDone}
