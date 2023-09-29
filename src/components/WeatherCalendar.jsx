@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import "../styleComponents/navigationWeather.scss";
 import axios from "axios";
+import Calendar from "react-calendar";
 
 function WeatherCalendar() {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=b82deac8152118cb574f6c75e5968bb0`;
+
+  /* Calendar */
+  const [calendar, setCalendar] = useState(new Date());
 
   const searchByLocation = (e) => {
     if (e.key === "Enter") {
@@ -56,6 +60,12 @@ function WeatherCalendar() {
             <h5>Pressure :</h5>
             {data.main ? <p>{data.main.pressure} hPa</p> : null}
           </div>
+        </div>
+      </div>
+      <div className="calendarSection">
+        <h1>Test calendar</h1>
+        <div className="calendar-container">
+          <Calendar />
         </div>
       </div>
     </div>
