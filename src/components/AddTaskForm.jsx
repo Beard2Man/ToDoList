@@ -9,7 +9,7 @@ const AddTaskForm = ({ newTask, setNewTask, addTask, desc, setDesc }) => {
 
   return (
     <>
-      <div className="addTaskContainer">
+      <div className="  addTaskContainer">
         <div>
           <form className="taskForm" action="" onSubmit={addTask}>
             <input

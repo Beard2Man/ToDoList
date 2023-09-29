@@ -2,14 +2,22 @@
   .addTaskContainer {
     margin-top: 100px;
     border-radius: 10px;
+
     position: absolute;
     z-index: 1;
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    border: none;
     width: 500px;
     height: 500px;
     background-color: rgba(6, 6, 65, 0.824);
+
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+
     .taskForm {
       align-items: center;
 
@@ -41,8 +49,4 @@
 .taskForm {
   display: flex;
   flex-direction: column;
-  .inputTask {
-  }
-  .textareaTask {
-  }
 }

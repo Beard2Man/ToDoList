@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import AddTaskForm from "./components/AddTaskForm.jsx";
 import UpdateForm from "./components/UpdateForm.jsx";
 import ToDo from "./components/ToDo.jsx";
-
+import Navigation from "./components/Navigation.jsx";
+import WeatherCalendar from "./components/WeatherCalendar.jsx";
 /* IMPORT CSS */
 import "./styleComponents/addTask.scss";
 
@@ -83,7 +84,8 @@ function App() {
     setIsShown((current) => !current);
   };
   return (
-    <div className="App container">
+    <div className="App">
+      <Navigation />
       {updateData && updateData ? (
         <UpdateForm
           updateData={updateData}
@@ -117,6 +119,7 @@ function App() {
         setUpdateData={setUpdateData}
         deleteTask={deleteTask}
       />
+      <WeatherCalendar />
     </div>
   );
 }
