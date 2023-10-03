@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import "../styleComponents/navigationWeather.scss";
 import axios from "axios";
 import Calendar from "react-calendar";
-
+import "../styleComponents/navigationWeather.scss";
+// import "../styleComponents/calendar.scss";
 import "react-calendar/dist/Calendar.css";
 
 function WeatherCalendar() {
@@ -35,7 +36,7 @@ function WeatherCalendar() {
   });
 
   return (
-    <div className="testWeather">
+    <div className="leftBar">
       <div className="weatherSection">
         <div className="searchByCity">
           <input
@@ -67,7 +68,11 @@ function WeatherCalendar() {
       <div className="calendarSection">
         <h1>Test calendar</h1>
         <div className="calendar-container">
-          <Calendar value={calendar} setCalendar={true} />
+          <Calendar
+            value={calendar}
+            onChange={setCalendar}
+            setCalendar={true}
+          />
         </div>
       </div>
     </div>

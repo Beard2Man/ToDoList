@@ -3,14 +3,15 @@
   height: 1000px;
   background-color: rgb(46, 44, 44);
 }
-.testWeather {
+.leftBar {
   padding-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-width: 300px;
-  // height: 1000px;
+
   background-color: rgb(46, 44, 44);
+
   .calendarSection {
     position: fixed;
     width: 250px;

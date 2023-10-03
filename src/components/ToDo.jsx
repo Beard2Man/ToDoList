@@ -1,7 +1,5 @@
 import React from "react";
 
-import Navigation from "./Navigation";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPen,
@@ -27,6 +25,7 @@ const ToDo = ({ toDo, markDone, setUpdateData, deleteTask }) => {
                     <div>
                       <span className="taskText">{task.description}</span>
                     </div>
+                    <span>{task.calendar}</span>
 
                     <div className="iconContent">
                       <span

@@ -12,7 +12,7 @@ import "./App.scss";
 
 function App() {
   const [toDo, setToDo] = useState([]);
-
+  const [calendar, setCalendar] = useState(new Date());
   const [newTask, setNewTask] = useState("");
   const [updateData, setUpdateData] = useState("");
   const [desc, setDesc] = useState("");
@@ -29,22 +29,22 @@ function App() {
   });
 
   const addTask = () => {
-    if (newTask && desc) {
+    if (newTask && desc && calendar) {
       let num = toDo.length + 1;
       let newEntry = {
         id: num,
         title: newTask,
         description: desc,
+        calendar: calendar,
         status: false,
       };
 
       setToDo([...toDo, newEntry]);
       setNewTask("");
       setDesc("");
+      setCalendar("");
     }
   };
-  // console.log("wartosc po", desc);
-  // console.log("wartosc po", newTask);
   const deleteTask = (id) => {
     let newTask = toDo.filter((task) => task.id !== id);
     setToDo(newTask);
@@ -66,6 +66,7 @@ function App() {
       id: updateData.id,
       title: e.target.value,
       description: e.target.value,
+      calendar: calendar.value,
       status: updateData.status ? true : false,
     };
     setUpdateData(newEntry);
@@ -84,8 +85,7 @@ function App() {
   };
   return (
     <div className="App container">
-      <Navigation />
-
+      <WeatherCalendar />
       {updateData && updateData ? (
         <UpdateForm
           updateData={updateData}
@@ -106,6 +106,8 @@ function App() {
                 addTask={addTask}
                 desc={desc}
                 setDesc={setDesc}
+                calendar={calendar}
+                setCalendar={setCalendar}
               />
             </div>
           )}
@@ -118,7 +120,7 @@ function App() {
         setUpdateData={setUpdateData}
         deleteTask={deleteTask}
       />
-      <WeatherCalendar />
+      <Navigation />
     </div>
   );
 }
